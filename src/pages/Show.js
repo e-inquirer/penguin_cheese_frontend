@@ -12,12 +12,13 @@ const Show = (props) => {
     const cheeses = props.cheeses
     // create state for form
     const [editForm, setEditForm] = useState({})
-    // useEffect to set state to the existing person, when the data is available
+    // useEffect to set state to the existing cheese, when the data is available
     useEffect(() => {
         if (props.cheeses) {
             const cheese = cheeses.find((c) => c._id === id)
             setEditForm(cheese)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.cheeses])
 
     if (props.cheeses){
@@ -84,10 +85,6 @@ const Show = (props) => {
     } else {
         return <h1>No Cheese</h1>
     }
-
-
-
-    return <h1>Show</h1>
 }
 
 export default Show
